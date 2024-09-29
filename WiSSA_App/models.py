@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
-from ckeditor.fields import RichTextField
+# from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
+
 
 
 # Create your models here.
@@ -18,9 +20,10 @@ class SubscribedUsers(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    body = RichTextField(blank=True,null=True)
+    body = HTMLField(blank=True,null=True)
     post_date = models.DateField(auto_now_add=True)
-    header_image = models.ImageField(null=True,blank=True,upload_to="images/")
+    news_image = models.ImageField(null=True,blank=True,upload_to="uploads/product/")
+
 
 
     def __str__(self):

@@ -14,7 +14,7 @@
                     {% for post in posts %}
                     <div class="d-md-flex post-entry-2 small-img">
                         <a href="#single-post.html" class="me-4 thumbnail">
-                            <img src="{% static 'assets/img/posts' %}" alt="" class="img-fluid">
+                            <img src="{{post.news_image.url}}" alt="" class="img-fluid" style="height: 40vh;width: 120%;">
                         </a>
                         <div>
                             <div class="post-meta"><span class="date"></span> <span class="mx-1"></span>
@@ -22,7 +22,7 @@
                             <h3><a href="#single-post.html">{{post.title}}</a></h3>
                             <p>{{post.body}}</p>
                             <div class="d-flex align-items-center author">
-                                <div class="photo"><img src="{{posts.image.url}}" alt="" class="img-fluid"></div>
+                                <!-- <div class="photo"><img src="{{post.image.url}}" alt="" class="img-fluid"></div> -->
                                 <div class="name">
                                     <h3 class="m-0 p-0">{{post.author}}</h3>
                                 </div>
