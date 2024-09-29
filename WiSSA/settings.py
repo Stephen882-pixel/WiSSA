@@ -32,7 +32,8 @@ SECRET_KEY = 'django-insecure-nk#^^5_#5%0u6jny8*jm49q2^@zno5*f*vueu^l=%2tz@f6%(+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["wissafrica.herokuapp.com"]
+
 
 
 
@@ -120,9 +121,18 @@ WSGI_APPLICATION = 'WiSSA.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
+
+
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",  # Or just "db.sqlite3" if BASE_DIR is defined correctly
+    }
 }
+
 
 
 
