@@ -1,4 +1,1 @@
-web: waitress-serve --port=$PORT WiSSA.wsgi:application
-
-
-
+web: gunicorn WiSSA.wsgi
